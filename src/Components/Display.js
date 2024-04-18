@@ -13,10 +13,12 @@ import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 import Paper from "@mui/material/Paper";
 import Container from "@mui/material/Container";
+import { useNavigate } from "react-router-dom";
 
 function Display() {
   const todos = useSelector((state) => state.todokey);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleToggle = (id) => {
     dispatch(toggleComplete(id));
@@ -30,18 +32,7 @@ function Display() {
     <Container maxWidth="sm" sx={{ marginTop: "2rem" }}>
       <Box>
         {todos.length === 0 ? (
-          <Box
-            sx={{
-              backgroundColor: "whitesmoke",
-              textAlign: "center",
-              borderRadius: "1rem",
-            }}
-            padding={4}
-          >
-            <Typography variant="body1">
-              Click on "Add todo" to make a list
-            </Typography>
-          </Box>
+         navigate("/")
         ) : (
           <List
             sx={{ bgcolor: "background.paper", overflowWrap: "break-word" }}
