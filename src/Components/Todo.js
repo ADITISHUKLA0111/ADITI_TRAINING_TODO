@@ -37,7 +37,7 @@ const Todo = () => {
     const phoneVal = phone;
 
     if (
-      text.length > 5 &&
+      text.length >= 5 &&
       text.length < 254 &&
       regEmail.test(val) &&
       phonePattern.test(phoneVal) &&
